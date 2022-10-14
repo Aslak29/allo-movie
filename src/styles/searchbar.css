@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  
+.searchbar{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #e9e9e9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.searchbar input{
+    padding: 10px 24px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.searchbar button{
+    background-color: rgb(224, 152, 16);
+    border: none;
+    padding: 10px 24px;
+    color: white;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+}

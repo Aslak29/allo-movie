@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.navigation {
+  background-color: rgb(224, 152, 16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+h3{
+    margin: 1rem;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.navigation ul li {
+  display: inline;
+}

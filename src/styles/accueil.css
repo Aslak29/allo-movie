@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: gray;
+}
+.box {
+  width: 100%;
+  margin: 1rem auto;
+  background-color: beige;
+}
+.grid {
+  display: grid;
+  margin-left: 0.5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2rem;
+}
+.movies{
+    display: block;
+    padding: 10px;
+}
+.image{
+    width: 200px;
+}
