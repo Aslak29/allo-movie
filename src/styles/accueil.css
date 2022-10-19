@@ -24,3 +24,27 @@ body {
 .image{
     width: 200px;
 }
+.pagination{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+  display: flex;
+  column-gap: 2px;
+  justify-content: center;
+}
+
+.pagination .page-link{
+  display: block;
+  background-color:  rgb(224, 152, 16);
+  padding: 5px 15px ;
+  cursor: pointer;
+}
+
+.pagination .page-link:hover{
+  background-color:  rgb(170, 152, 118);
+}
+
+.pagination .active{
+  background-color:  rgb(170, 152, 118);
+}
