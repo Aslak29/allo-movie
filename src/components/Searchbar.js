@@ -5,8 +5,7 @@ import "../styles/searchbar.css";
 const API_SEARCH =
   "https://api.themoviedb.org/3/search/movie?api_key=5b99e2aae56dbf88a9b2f51f28b62e48&query";
 
-const Searchbar = () => {
-  const [setMovies] = useState([]);
+const Searchbar = ({setMovies}) => {
   const [query, setQuery] = useState("");
 
   const searchMovie = async (e) => {
@@ -17,8 +16,10 @@ const Searchbar = () => {
       const data = await res.json();
       console.log(data);
       setMovies(data.results);
-    } catch (e) {}
-    console.log(e);
+    } catch (error) {
+       console.log(error);
+    }
+   
   };
 
   const changeHandler = (e) => {

@@ -7,46 +7,44 @@ import "../styles/accueil.css";
 import ReactPaginate from "react-paginate";
 import { current } from "@reduxjs/toolkit";
 
-
-const Accueil = ({moviesPerPage}) => {
+const Accueil = ({ moviesPerPage }) => {
   const [movies, setMovies] = useState([]);
-  const [pageCount, setPageCount]= useState(0)
+  const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=5b99e2aae56dbf88a9b2f51f28b62e48&page=${currentPage}`;
 
   const handlePageClick = (event) => {
-    const newPage =(event.selected)+1;
+    const newPage = event.selected + 1;
     setCurrentPage(newPage);
-    setUrl(API_URL)
+    setUrl(API_URL);
   };
-    const[url, setUrl]= useState(API_URL);
+  const [url, setUrl] = useState(API_URL);
 
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
-      }); setPageCount(Math.ceil(movies.length / moviesPerPage))
+      });
+    setPageCount(Math.ceil(movies.length / moviesPerPage));
   }, [moviesPerPage, currentPage]);
 
-  // const AddFav =()=>{
-  //   const newFav ={
-
+  // const addFav =()=>{
+  //  const newFav={
+  //   id: setMovies(),
+  // };
   //   };
 
   //   setMovies([data.results, newFav])
   //   }
 
-  //   const deleteFav =()=> {
-
+  //   const removeFav =()=> {
   //   }
-
 
   return (
     <div>
       <Navigation />
-      <Searchbar />
-      <h1>Accueil</h1>
+      <Searchbar setMovies={setMovies} />
       <div className="box">
         <div className="grid">
           {movies.map((movieReq) => (

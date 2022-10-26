@@ -8,6 +8,14 @@ const API_URL ="https://api.themoviedb.org/3/discover/movie?api_key=5b99e2aae56d
 
 const Favoris = () => {
 
+  const FAV_ORDERED ='FAV_ORDERED'
+
+  function orderFav() {
+    return{
+      type: FAV_ORDERED
+    }
+  }
+
   const handlePageClick =() =>{
     console.log("clicked")
   }
