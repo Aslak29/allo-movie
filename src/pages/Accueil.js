@@ -29,17 +29,6 @@ const Accueil = ({ moviesPerPage }) => {
     setPageCount(Math.ceil(movies.length / moviesPerPage));
   }, [moviesPerPage, currentPage]);
 
-  // const addFav =()=>{
-  //  const newFav={
-  //   id: setMovies(),
-  // };
-  //   };
-
-  //   setMovies([data.results, newFav])
-  //   }
-
-  //   const removeFav =()=> {
-  //   }
 
   return (
     <div>
@@ -48,7 +37,7 @@ const Accueil = ({ moviesPerPage }) => {
       <div className="box">
         <div className="grid">
           {movies.map((movieReq) => (
-            <MovieBox key={movieReq.id} {...movieReq} />
+            <MovieBox addMovie={true} key={movieReq.id} {...movieReq} />
           ))}
         </div>
         <button></button>

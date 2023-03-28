@@ -11,17 +11,16 @@ const Favoris = () => {
 
   const fav =useSelector((state) => state.fav)
 
-  
-
   const handlePageClick =() =>{
     console.log("clicked")
+
   }
   return (
     <div>
       <Navigation />
       <Searchbar />
       <h1>Favoris</h1>
-      <div>{fav.map((movieParam) => <MovieBox addMovie={false} key={movieParam.movie.id} {...movieParam.movie}/>)}</div>
+      <div>{fav.map((movieReq) => <MovieBox addMovie={false} key={movieReq.movie.id} {...movieReq.movie}/>)}</div>
       <div className="pagination">
       <ReactPaginate 
       previousLabel={'previous'}
