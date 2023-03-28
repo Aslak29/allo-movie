@@ -3,18 +3,15 @@ import Navigation from "../components/Navigation";
 import Searchbar from "../components/Searchbar";
 import "../styles/favoris.css";
 import ReactPaginate from "react-paginate";
+import { useSelector } from "react-redux";
+import MovieBox from "../components/MovieBox";
 
-const API_URL ="https://api.themoviedb.org/3/discover/movie?api_key=5b99e2aae56dbf88a9b2f51f28b62e48&id";
 
 const Favoris = () => {
 
-  const FAV_ORDERED ='FAV_ORDERED'
+  const fav =useSelector((state) => state.fav)
 
-  function orderFav() {
-    return{
-      type: FAV_ORDERED
-    }
-  }
+  
 
   const handlePageClick =() =>{
     console.log("clicked")
@@ -24,6 +21,7 @@ const Favoris = () => {
       <Navigation />
       <Searchbar />
       <h1>Favoris</h1>
+      <div>{fav.map((movieParam) => <MovieBox addMovie={false} key={movieParam.movie.id} {...movieParam.movie}/>)}</div>
       <div className="pagination">
       <ReactPaginate 
       previousLabel={'previous'}
